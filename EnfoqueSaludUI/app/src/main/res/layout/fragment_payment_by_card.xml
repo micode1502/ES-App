@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PaymentByCardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Número de Tarjeta"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:errorTextAppearance="@style/TextAppearance.App.TextInputLayoutError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvCardNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNumberCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="1234 8896 1145 0896"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvExpiryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Fecha de Caducidad"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/tilCardNumber" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilExpiryDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:errorTextAppearance="@style/TextAppearance.App.TextInputLayoutError"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tilCVV"
+            app:layout_constraintTop_toBottomOf="@+id/tvExpiryDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDateExpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="02/2024"
+                android:inputType="datetime|date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvCVV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CVV"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvExpiryDate"
+            app:layout_constraintStart_toEndOf="@+id/tvExpiryDate"
+            app:layout_constraintStart_toStartOf="@+id/tilCVV"
+            app:layout_constraintTop_toTopOf="@+id/tvExpiryDate" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilCVV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:errorTextAppearance="@style/TextAppearance.App.TextInputLayoutError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tilExpiryDate"
+            app:layout_constraintTop_toBottomOf="@+id/tvExpiryDate">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtCvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="485"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Nombre Completo"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tilExpiryDate"
+            app:layout_constraintHorizontal_bias="0"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNameComplete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:errorTextAppearance="@style/TextAppearance.App.TextInputLayoutError"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFullName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNameComplete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=""
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

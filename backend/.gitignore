@@ -1,0 +1,8 @@
+.vscode
+.venv
+.env
+credentials.json
+__pycache__
+.mypy_cache
+.pytest_cache
+__cache__

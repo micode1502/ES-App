@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EnfoqueSalud</string>
+    <string name="content_description_start_icon"> </string>
+    <string name="default_notification_channel_id" translatable="false">channel_id</string>
+</resources>

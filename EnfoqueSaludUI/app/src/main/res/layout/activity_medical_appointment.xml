@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MedicalAppointment">
+
+    <ScrollView
+        android:id="@+id/swMedicalA"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPaymentAppointment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/arrowAppointment"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:onClick="goBack"
+                android:src="@drawable/ic_arrow_back_24"
+                app:layout_constraintBottom_toBottomOf="@+id/txtMedical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtMedical"
+/>
+
+            <TextView
+                android:id="@+id/txtMedical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Cita Médica"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgMedical"
+                android:layout_width="102dp"
+                android:layout_height="97dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/doctor"
+                app:layout_constraintHorizontal_bias="0"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedical" />
+
+            <TextView
+                android:id="@+id/txtMedic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@+id/imgMedical"
+                app:layout_constraintTop_toTopOf="@+id/imgMedical" />
+
+            <TextView
+                android:id="@+id/txtSpecialti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/txtMedic"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedic"/>
+
+
+            <TextView
+                android:id="@+id/txtPaymentMedical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Payment"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toStartOf="@+id/txtPaymentMount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txtSpecialti"
+                app:layout_constraintTop_toBottomOf="@+id/txtSpecialti" />
+
+            <ImageView
+                android:id="@+id/imgComment"
+                android:layout_width="23dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/txtMedic"
+                app:layout_constraintTop_toTopOf="@+id/txtMedic"
+                app:layout_constraintEnd_toStartOf="@id/imgPhone"
+                app:srcCompat="@drawable/ic_comment_24" />
+
+            <ImageView
+                android:id="@+id/imgPhone"
+                android:layout_width="21dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="24dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgComment"
+                app:layout_constraintTop_toTopOf="@+id/txtMedic"
+                app:srcCompat="@drawable/ic_phone_24" />
+
+            <TextView
+                android:id="@+id/txtPaymentMount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPaymentMedical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtPaymentMedical"
+                app:layout_constraintTop_toTopOf="@+id/txtPaymentMedical" />
+
+            <TextView
+                android:id="@+id/txtDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="24dp"
+                android:text="Detalles"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPaymentMedical"
+                app:layout_constraintBottom_toTopOf="@id/txtDetailsMedical"/>
+
+
+            <TextView
+                android:id="@+id/txtDetailsMedical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:text="Worem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis. Ut commodo efficitur neque. Ut diam quam, semper iaculis condimentum ac, vestibulum eu nisl."
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDetails" />
+
+            <TextView
+                android:id="@+id/txtRecognition"
+                android:layout_width="168dp"
+                android:layout_height="24dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="20dp"
+                android:text="Reconocimiento"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDetailsMedical" />
+
+            <ImageView
+                android:id="@+id/imgNovelPaz"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/experience"
+                app:layout_constraintEnd_toStartOf="@id/imgPulitzer"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtRecognition" />
+
+            <ImageView
+                android:id="@+id/imgPulitzer"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/mejor_medico"
+                app:layout_constraintBottom_toBottomOf="@+id/imgNovelPaz"
+                app:layout_constraintEnd_toStartOf="@id/imgQuimica"
+                app:layout_constraintStart_toEndOf="@+id/imgNovelPaz"
+                app:layout_constraintTop_toTopOf="@+id/imgNovelPaz" />
+
+            <ImageView
+                android:id="@+id/imgQuimica"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/top_awards"
+                app:layout_constraintBottom_toBottomOf="@+id/imgPulitzer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imgPulitzer"
+                app:layout_constraintTop_toTopOf="@+id/imgPulitzer" />
+
+            <TextView
+                android:id="@+id/txtNovel"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="10 años de Experiencia"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/imgNovelPaz"
+                app:layout_constraintEnd_toStartOf="@id/txtPulitzer"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imgNovelPaz"
+                app:layout_constraintTop_toBottomOf="@+id/imgNovelPaz" />
+
+            <TextView
+                android:id="@+id/txtPulitzer"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Premio Wolf en Medicina"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/imgPulitzer"
+                app:layout_constraintEnd_toStartOf="@id/txtQuimica"
+                app:layout_constraintHorizontal_bias="0.089"
+                app:layout_constraintStart_toEndOf="@+id/txtNovel"
+                app:layout_constraintStart_toStartOf="@+id/imgPulitzer"
+                app:layout_constraintTop_toBottomOf="@+id/imgPulitzer" />
+
+            <TextView
+                android:id="@+id/txtQuimica"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Top Medicos Awards"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/imgQuimica"
+                app:layout_constraintHorizontal_bias="0.883"
+                app:layout_constraintStart_toEndOf="@+id/txtPulitzer"
+                app:layout_constraintStart_toStartOf="@+id/imgQuimica"
+                app:layout_constraintTop_toBottomOf="@+id/imgQuimica" />
+
+            <TextView
+                android:id="@+id/txtTimeTable"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="28dp"
+                android:text="Seleccionar Horario"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txtRecognition"
+                app:layout_constraintTop_toBottomOf="@+id/txtNovel" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTimeTable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Seleccionar Horario"
+                app:cornerRadius="5dp"
+                app:icon="@drawable/ic_calendar_month_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/txtTimeTable"
+                app:layout_constraintTop_toBottomOf="@+id/txtTimeTable" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/viewDay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="130dp"
+                android:paddingVertical="10dp"
+                android:text="Pago con Tajeta"
+                android:visibility="invisible"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnTimeTable" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPaymentAppointment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:text="Pagar Cita"
+        android:layout_marginHorizontal="24dp"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swMedicalA"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

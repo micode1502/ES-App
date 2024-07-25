@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Home">
+
+    <ImageView
+        android:id="@+id/imgUser"
+        android:layout_width="63dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/profile_default"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Hola Bienvenido Paciente!"
+        android:textSize="13sp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toTopOf="@id/txtUser"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
+        app:layout_constraintTop_toTopOf="@+id/imgUser" />
+
+    <TextView
+        android:id="@+id/txtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/imgUser"
+        app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+
+    <ImageView
+        android:id="@+id/imgNotification"
+        android:layout_width="39dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintStart_toEndOf="@+id/txtWelcome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/ic_notifications_active_24" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgUser"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutSearch"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginHorizontal="25dp"
+                app:startIconContentDescription="@string/content_description_start_icon"
+                app:startIconDrawable="@drawable/ic_search_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Buscar Especialidad"
+                    android:inputType="text"
+                    app:endIconMode="clear_text" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <RelativeLayout
+                android:id="@+id/rlSlide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutSearch"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/tvSpecialty">
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/slider"
+                    app:iss_auto_cycle="true"
+                    app:iss_delay="0"
+                    app:iss_period="3000"
+                    app:iss_placeholder="@color/black"
+                    app:iss_error_image="@color/secondary"
+                    app:iss_corner_radius="20"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="25dp"/>
+            </RelativeLayout>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSpecialty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toStartOf="@+id/tvSeeMoreS"
+                app:layout_constraintTop_toBottomOf="@+id/rlSlide"
+                android:text="Especialidades"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSeeMoreS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintStart_toEndOf="@+id/tvSpecialty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvSpecialty"
+                app:layout_constraintBottom_toBottomOf="@+id/tvSpecialty"
+                android:text="Ver más"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_specialty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSpecialty"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMedical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintEnd_toStartOf="@+id/tvSeeMoreM"
+                app:layout_constraintTop_toBottomOf="@+id/rv_specialty"
+                android:text="Médicos"
+                />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSeeMoreM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                app:layout_constraintStart_toEndOf="@+id/tvMedical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvMedical"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMedical"
+                android:text="Ver más"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:layout_marginVertical="15dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:outlineSpotShadowColor="#00000000"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMedical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/secondary_variant">
+
+                    <!-- Imagen a la izquierda -->
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="120dp"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="10dp"
+                        android:contentDescription="Doctor"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/doctor"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/glMedical"
+                        app:layout_constraintStart_toStartOf="parent"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/glMedical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.45" />
+                    <!-- Título -->
+                    <TextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tvdescription"
+                        app:layout_constraintEnd_toStartOf="@+id/glMedical3"
+                        app:layout_constraintStart_toEndOf="@+id/glMedical"
+                        app:layout_constraintTop_toTopOf="@+id/imageView"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <!-- Descripción -->
+                    <TextView
+                        android:id="@+id/tvdescription"
+                        android:layout_width="0dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintBottom_toTopOf="@+id/glMedical2"
+                        app:layout_constraintEnd_toStartOf="@+id/glMedical3"
+                        app:layout_constraintStart_toEndOf="@+id/glMedical"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+                    <!-- Icono de estrella -->
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/glMedical2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.65" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/glMedical3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.95" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/mbSeeMedicalHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:paddingHorizontal="16dp"
+                        android:text="Ver"
+                        app:layout_constraintStart_toEndOf="@id/glMedical"
+                        app:layout_constraintTop_toBottomOf="@id/glMedical2" />
+
+                    <ImageView
+                        android:id="@+id/starImageView"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="Rating"
+                        android:src="@drawable/star_24"
+                        app:layout_constraintBottom_toBottomOf="@+id/mbSeeMedicalHome"
+                        app:layout_constraintEnd_toStartOf="@+id/tvMinutesAgo"
+                        app:layout_constraintHorizontal_bias="1"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@+id/glMedical"
+                        app:layout_constraintTop_toBottomOf="@id/glMedical2" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvMinutesAgo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/starImageView"
+                        app:layout_constraintEnd_toStartOf="@id/glMedical3"
+                        app:layout_constraintStart_toEndOf="@+id/starImageView"
+                        app:layout_constraintTop_toBottomOf="@id/glMedical2" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/bottom_navigation"
+        style="@style/MiBottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation_menu"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+</androidx.constraintlayout.widget.ConstraintLayout>

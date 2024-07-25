@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MiBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+
+        <item name="backgroundTint">@color/white</item>
+
+        <!-- Color icono activo -->
+        <item name="itemActiveIndicatorStyle">@style/ActivoItem</item>
+
+        <!-- Color icono pulsado -->
+        <item name="itemRippleColor">@color/secondary_variant2</item>
+    </style>
+
+    <!-- Estilo icono activo -->
+    <style name="ActivoItem">
+
+        <item name="itemActiveIndicatorStyle">@style/IndicatorShape</item>
+
+    </style>
+
+
+    <style name="IndicatorShape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+
+        <item name="strokeColor">@color/white</item>
+        <item name="strokeWidth">5dp</item>
+    </style>
+
+    <style name="TextAppearance.App.TextInputLayoutError" parent="@style/TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>
